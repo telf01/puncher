@@ -33,12 +33,12 @@ func main() {
 	getR.HandleFunc("/ask", master.HandleAsk)
 
 	s := http.Server{
-		Addr:         ":" + PORT,        // configure the bind address
-		Handler:      sm,                // set the default handler
-		ErrorLog:     master.L,          // set the logger for the server
-		ReadTimeout:  5 * time.Second,   // max time to read request from the client
-		WriteTimeout: 10 * time.Second,  // max time to write response to the client
-		IdleTimeout:  120 * time.Second, // max time for connections using TCP Keep-Alive
+		Addr:         ":" + PORT, // configure the bind address
+		Handler:      sm,                  // set the default handler
+		ErrorLog:     master.L,            // set the logger for the server
+		ReadTimeout:  5 * time.Second,     // max time to read request from the client
+		WriteTimeout: 10 * time.Second,    // max time to write response to the client
+		IdleTimeout:  120 * time.Second,   // max time for connections using TCP Keep-Alive
 	}
 
 	go func() {
